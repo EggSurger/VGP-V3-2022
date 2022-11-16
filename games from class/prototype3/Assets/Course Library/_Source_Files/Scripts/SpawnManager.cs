@@ -9,6 +9,7 @@ public class SpawnManager : MonoBehaviour
     private float startDelay = 2;
     private float repeatRate = 2;
     private PlayerControler playerControllerScript;
+    private float leftBound =-10;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,9 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (trans)
+        if (transform.position.x < leftBound && gameObject.CompareTag("Obstacle")){
+            Destroy(gameObject);
+        }
     }
 
 
