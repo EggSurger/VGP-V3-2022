@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,11 +21,13 @@ public class PlayerControllerX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameOver = false;
+        playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
         playerAudio = GetComponent<AudioSource>();
 
         // Apply a small upward force at the start of the game
-        playerRb.AddForce(Vector3.up * 5, ForceMode.Impulse);
+        playerRb.AddForce(Vector3.up, ForceMode.Impulse);
 
     }
 
@@ -33,9 +35,10 @@ public class PlayerControllerX : MonoBehaviour
     void Update()
     {
         // While space is pressed and player is low enough, float up
-        if (Input.GetKey(KeyCode.Space) && !gameOver)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            playerRb.AddForce(Vector3.up * floatForce);
+            playerRb.AddForce(Vector3.up * floatForce, gravityModifier );
+            Debug.Log("h");
         }
     }
 
@@ -46,7 +49,7 @@ public class PlayerControllerX : MonoBehaviour
         {
             explosionParticle.Play();
             playerAudio.PlayOneShot(explodeSound, 1.0f);
-            gameOver = false;
+            gameOver = true;
             Debug.Log("Game Over!");
             Destroy(other.gameObject);
         } 
