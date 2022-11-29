@@ -38,7 +38,7 @@ public class PlayerControllerX : MonoBehaviour
         // While space is pressed and player is low enough, float up
         if (Input.GetKey(KeyCode.Space))
         {
-            playerRb.AddForce( Vector3.up, floatForce * gravityModifier );
+            playerRb.AddForce(Vector3.up * floatForce * ForceMode.Impulse  );
             Debug.Log("h");
         }
     }
