@@ -878,5 +878,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObstacleList:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8617258480616637986, guid: 3d7f1850990de7446b1a2c4e7a1bcd0c, type: 3}
+  - {fileID: 6933835449694480662, guid: 034e4e8e6eae4e645ae7376762c095eb, type: 3}
