@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
+    public int pointValue;
+    private GameManager gameManager;
     private Rigidbody  targetRb;
     private float minSpeed = 12;
     private float maxSpeed = 16;
@@ -17,9 +19,11 @@ public class Target : MonoBehaviour
         targetRb.AddForce(RandomForce(), ForceMode.Impulse);
         targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);
         transform.position = RandomSpawnPos();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 private void OnMouseDown(){
     Destroy(gameObject);
+    gameManager.UpdateScore(5);
 }
 private void OnTriggerEnter(Collider other){
     Destroy(gameObject);
