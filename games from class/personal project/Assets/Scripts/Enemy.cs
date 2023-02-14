@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    public float speed = 5.0f;
+
+    private float zDestroy = -10.0f;
+    private Rigidbody objectRb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        objectRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        objectRb.AddForce(Vector3.forward * -speed);
+
+        if(transform.position.z < zDestroy)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("hi");
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("PowerUp"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
