@@ -25,18 +25,5 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("hi");
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.CompareTag("PowerUp"))
-        {
-            Destroy(other.gameObject);
-        }
-    }
+    
 }
