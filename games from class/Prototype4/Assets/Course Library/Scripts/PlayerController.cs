@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
     private GameObject focalPoint;
+    public GameObject Bullet;
     public float speed = 5.0f;
     public bool hasPowerup;
     private float powerupStrength = 15.0f;
@@ -46,6 +47,20 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Collided with" + collision.gameObject.name + "with powerup set to" + hasPowerup);
         
         enemyRigidbody.AddForce(awayFromPlayer * powerupStrength,ForceMode.Impulse);
+        }
+    }
+    private void shoot()
+    {
+        Enemy[] enemyList = FindObjectsOfType<Enemy>();
+
+        foreach( Enemy enemy in enemyList)
+        {
+            Vector3 lookToEnemy = enemy.transform.position - transform.position;
+            Vector3 starPos = transform.position + lookToEnemy.normalized + new Vector3(0, 1, 0);
+
+            Quaternion rotate = Quaternion.LookRotation(lookToEnemy, Vector3.up) * Quaternion.Euler(90,0,0);
+
+            Instantiate(bullet, starPos, rotate).GetComponent<Bullet>().target = enemy.gameObject;
         }
     }
 }
