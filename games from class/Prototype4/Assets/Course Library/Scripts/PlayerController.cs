@@ -49,18 +49,5 @@ public class PlayerController : MonoBehaviour
         enemyRigidbody.AddForce(awayFromPlayer * powerupStrength,ForceMode.Impulse);
         }
     }
-    private void shoot()
-    {
-        Enemy[] enemyList = FindObjectsOfType<Enemy>();
-
-        foreach( Enemy enemy in enemyList)
-        {
-            Vector3 lookToEnemy = enemy.transform.position - transform.position;
-            Vector3 starPos = transform.position + lookToEnemy.normalized + new Vector3(0, 1, 0);
-
-            Quaternion rotate = Quaternion.LookRotation(lookToEnemy, Vector3.up) * Quaternion.Euler(90,0,0);
-
-            Instantiate(bullet, starPos, rotate).GetComponent<Bullet>().target = enemy.gameObject;
-        }
-    }
+   
 }
