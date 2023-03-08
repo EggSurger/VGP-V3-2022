@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3385209710915412338}
   - component: {fileID: 3385209710914826742}
   - component: {fileID: 937991091943495433}
+  - component: {fileID: -1652532059990295033}
   m_Layer: 0
   m_Name: PowerUp
   m_TagString: PowerUp
@@ -95,3 +96,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.56108856, y: 1.1642656, z: 0.19124222}
   m_Center: {x: -0.10422611, y: 0.5821328, z: 0.09562111}
+--- !u!114 &-1652532059990295033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3385209710916526210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0178886998b74ae4db8e0099490bdf4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpType: 1
