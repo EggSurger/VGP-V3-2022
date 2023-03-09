@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RocketBehaviour : MonoBehaviour
 {
-    private Transform target;
+    public Transform target;
     private float speed = 45.0f;
     private bool homing;
 
@@ -27,9 +27,9 @@ if(homing && target != null)
 
     }
 
-    public void Fire(Transform newTarget)
+    public void Fire(Transform newtarget)
    {
-    target = newTarget;
+    target = newtarget;
     homing = true;
     Destroy(gameObject, aliveTimer);
    }
