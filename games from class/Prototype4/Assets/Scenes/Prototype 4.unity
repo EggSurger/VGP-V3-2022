@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d2080d71efeb74e96fba023b53c88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 1712389833265962777, guid: d4d70c392c1638a4c8f5a59e12bf2b20, type: 3}
+  Bullet: {fileID: 3760339533214987973, guid: 4cb472f135dc14d49afe62238f408a8f, type: 3}
   speed: 5
   hasPowerup: 0
   powerupIndicator: {fileID: 1990817785}
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314224329}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cfd9c73f7e1b374394e21746d3c2bbb, type: 3}
   m_Name: 

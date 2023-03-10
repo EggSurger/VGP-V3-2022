@@ -11,13 +11,15 @@ public class RocketBehaviour : MonoBehaviour
     private float rocketStrength = 15.0f;
     private float aliveTimer = 5.0f;
     // Start is called before the first frame update
-    
+    void Start(){
+
+    }
 
     // Update is called once per frame
     void Update()
     {
         
-if(homing && target != null)
+if(homing )
 {
     Vector3 moveDirection = (target.transform.position -
     transform.position).normalized;
