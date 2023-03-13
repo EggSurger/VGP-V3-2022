@@ -72,7 +72,7 @@ foreach(var enemy in FindObjectsOfType<Enemy>())
 {
 tmpRocket = Instantiate(rocketPrefab, transform.position + Vector3.up,
 Quaternion.identity);
-tmpRocket.GetComponent<RocketBehaviour>().Fire(enemy.transform);
+
 }
 }
    
