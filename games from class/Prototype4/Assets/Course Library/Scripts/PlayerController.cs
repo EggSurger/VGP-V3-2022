@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
 
         if (currentPowerUp == PowerUpType.Rockets && Input.GetKeyDown(KeyCode.F))
 {
-LaunchRockets();
+
 }
     }
     private void OnTriggerEnter(Collider other){
@@ -68,12 +68,11 @@ LaunchRockets();
     }
 void LaunchRockets()
 {
-foreach(var enemy in FindObjectsOfType<Enemy>())
-{
-tmpRocket = Instantiate(rocketPrefab, transform.position + Vector3.up,
-Quaternion.identity);
-
-}
+    foreach(var enemy in FindObjectsOfType<Enemy>())
+    {
+        tmpRocket = Instantiate(rocketPrefab, transform.position + Vector3.up, Quaternion.identity);
+        tmpRocket.GetComponent<RocketBehaviour>().Fire(enemy.transform);
+    }
 }
    
 }

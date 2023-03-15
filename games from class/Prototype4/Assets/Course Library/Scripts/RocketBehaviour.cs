@@ -7,12 +7,12 @@ public class RocketBehaviour : MonoBehaviour
    //public GameObject target;
     //public float speed = 10.0f;
    // public float speedRot = 10.0f;
-private Transform target;
-private float speed = 15.0f;
-private bool homing = true;
+    private Transform target;
+    private float speed = 15.0f;
+    private bool homing = true;
 
-private float rocketStrength = 15.0f;
-private float aliveTimer = 5.0f;
+    private float rocketStrength = 15.0f;
+    private float aliveTimer = 5.0f;
     // Start is called before the first frame update
     void Start(){
     
@@ -34,19 +34,19 @@ private float aliveTimer = 5.0f;
 
         transform.Translate(Vector3.up * Time.deltaTime * speed);
         */
-if (homing && target !=null)
-{
-    Vector3 moveDirection = (target.transform.position - transform.position) .normalized;
-    transform.position += moveDirection * speed * Time.deltaTime;
-    transform.LookAt (target);
-}
+
+
+        Vector3 moveDirection = (target.transform.position - transform.position).normalized;
+        transform.position += moveDirection * speed * Time.deltaTime;
+        transform.LookAt(target);
+
     }
- public void Fire(Transform newTarget)
-{
-    target = newTarget;
-    homing = true;
-    Destroy(gameObject, aliveTimer);
-}
+    public void Fire(Transform newTarget)
+    {
+        target = newTarget;
+        homing = true;
+        Destroy(gameObject, aliveTimer);
+    }
 
 
     
