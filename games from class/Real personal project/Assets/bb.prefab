@@ -91,7 +91,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8459664869385444673}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fce820cb8d6fd5a478b42a3654c47243, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1851c11ce3ab4a428aa67c4f2ab860b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1800
+  speed: 1888
   enemyRb: {fileID: 7876447782733723212}
   playerGoal: {fileID: 3478651603855092317, guid: f334551fc97051c40811934a0125ceed, type: 3}
 --- !u!54 &7876447782733723212
