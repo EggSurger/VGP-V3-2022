@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1851c11ce3ab4a428aa67c4f2ab860b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 150
+  speed: 500
   enemyRb: {fileID: 8800333721178552246}
   playerGoal: {fileID: 0}
 --- !u!54 &8800333721178552246
