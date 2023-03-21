@@ -15,6 +15,14 @@ public class PlayerController : MonoBehaviour
     public GameObject rocketPrefab;
     private GameObject tmpRocket;
     private Coroutine powerupCountdown;
+    
+    public float hangTime;
+    public float smashSpeed;
+    public float explosionForce;
+    public float explosionRadius;
+
+    bool smashing = false;
+    float floorY;
     // Start is called before the first frame update
     void Start()
     {
@@ -74,5 +82,12 @@ void LaunchRockets()
         tmpRocket.GetComponent<RocketBehaviour>().Fire(enemy.transform);
     }
 }
-   
+   IEnumerator Smash()
+   {
+    var enemies = FindObjectsOfType<Enemy>();
+
+    float jumpTime = Time.time + hangTime;
+
+    
+   }
 }
