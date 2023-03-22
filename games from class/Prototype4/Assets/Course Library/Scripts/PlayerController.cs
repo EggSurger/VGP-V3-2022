@@ -41,6 +41,11 @@ public class PlayerController : MonoBehaviour
 {
 
 }
+if(currentPowerUp == PowerUpType.Smash && Input.GetKeyDown(KeyCode.Space) && !smashing)
+{
+    smashing = true;
+    StartCoroutine(Smash());
+}
     }
     private void OnTriggerEnter(Collider other){
         if (other.CompareTag("PowerUp")){
@@ -88,6 +93,22 @@ void LaunchRockets()
 
     float jumpTime = Time.time + hangTime;
 
+    while(Time.time < jumpTime)
+    {
+        playerRb.velocity = new Vector2(playerRb.velocity.x, smashSpeed);
+        yield return null;
+    }
+    while(transform.position.y > floorY)
+    {
+        playerRb.velocity = new Vector2(playerRb.velocity.x, -smashSpeed * 2);
+        yield return null;
+    }
+    for(int i = 0; i < enemies.Length; i++)
+    {
+        if(enemies[i] != null)
+        enemies[i].GetComponent<Rigidbody>().AddExplosionForce(explosionForce, transform.position, explosionRadius,0.0f, ForceMode.Impulse);
     
+    }
+    smashing = false;
    }
 }
