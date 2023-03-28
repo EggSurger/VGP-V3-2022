@@ -84,7 +84,7 @@ void ChangedPaused(){
     {
         paused = false;
         pauseScreen.SetActive(false);
-        Time.timescale = 1;
+        Time.timeScale = 1;
     }
 }
 }
