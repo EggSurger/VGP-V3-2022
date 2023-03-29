@@ -577,7 +577,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1374840954}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: set_volume
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2235,6 +2235,7 @@ MonoBehaviour:
   restartButton: {fileID: 70184247}
   titleScreen: {fileID: 1484468259}
   livesText: {fileID: 667102786}
+  pauseScreen: {fileID: 0}
 --- !u!4 &1374840953
 Transform:
   m_ObjectHideFlags: 0

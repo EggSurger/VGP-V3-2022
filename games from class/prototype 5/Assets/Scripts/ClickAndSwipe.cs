@@ -19,7 +19,7 @@ public class ClickAndSwipe : MonoBehaviour
         trail.enabled = false;
         col.enabled = false;
 
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class ClickAndSwipe : MonoBehaviour
     {
         if(collision.gameObject.GetComponent<Target>())
         {
-            
+            collision.gameObject.GetComponent<Target>().DestroyTarget();
         }
     }
 
