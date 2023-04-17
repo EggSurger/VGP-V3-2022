@@ -2235,7 +2235,7 @@ MonoBehaviour:
   restartButton: {fileID: 70184247}
   titleScreen: {fileID: 1484468259}
   livesText: {fileID: 667102786}
-  pauseScreen: {fileID: 0}
+  pauseScreen: {fileID: 650990300}
 --- !u!4 &1374840953
 Transform:
   m_ObjectHideFlags: 0

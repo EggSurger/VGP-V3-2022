@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7505791113790371464}
   - component: {fileID: 8130942867226966017}
   - component: {fileID: 7920600213602665134}
-  - component: {fileID: 2085524996038179136}
+  - component: {fileID: 5974220392789674314}
   m_Layer: 0
   m_Name: chaser
   m_TagString: Untagged
@@ -110,9 +110,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1000
-  enemyRb: {fileID: 2085524996038179136}
+  enemyRb: {fileID: 0}
   playerGoal: {fileID: 0}
---- !u!54 &2085524996038179136
+--- !u!54 &5974220392789674314
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

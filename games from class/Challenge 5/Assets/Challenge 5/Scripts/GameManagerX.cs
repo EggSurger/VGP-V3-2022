@@ -69,8 +69,11 @@ public class GameManagerX : MonoBehaviour
     // Update score with value from target clicked
     public void UpdateScore(int scoreToAdd)
     {
+        //add points to the score when points gained
         score += scoreToAdd;
-        scoreText.text = "score" + score;
+        //update screen with the word score
+        // and the value stored in the variable score
+        scoreText.text = "score: " + score;
     }
 
     // Stop game, bring up game over text and restart button

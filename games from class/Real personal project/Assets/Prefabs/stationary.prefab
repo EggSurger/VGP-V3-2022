@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8800333721178552251}
   - component: {fileID: 8800333721178552250}
   - component: {fileID: 8800333721178552253}
-  - component: {fileID: 8800333721178552246}
+  - component: {fileID: 7685167411592062739}
   m_Layer: 0
   m_Name: stationary
   m_TagString: Untagged
@@ -110,9 +110,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 500
-  enemyRb: {fileID: 8800333721178552246}
+  enemyRb: {fileID: 7685167411592062739}
   playerGoal: {fileID: 0}
---- !u!54 &8800333721178552246
+--- !u!54 &7685167411592062739
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
