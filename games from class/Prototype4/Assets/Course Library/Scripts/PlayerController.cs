@@ -38,14 +38,14 @@ public class PlayerController : MonoBehaviour
         powerupIndicator.transform.position = transform.position + new Vector3(0, -0.5f, 0);
 
         if (currentPowerUp == PowerUpType.Rockets && Input.GetKeyDown(KeyCode.F))
-{
-
-}
-if(currentPowerUp == PowerUpType.Smash && Input.GetKeyDown(KeyCode.Space) && !smashing)
-{
-    smashing = true;
-    StartCoroutine(Smash());
-}
+        {
+           LaunchRockets();
+        }
+        if(currentPowerUp == PowerUpType.Smash && Input.GetKeyDown(KeyCode.Space) && !smashing)
+        {
+            smashing = true;
+            StartCoroutine(Smash());
+        }
     }
     private void OnTriggerEnter(Collider other){
         if (other.CompareTag("PowerUp")){
@@ -59,12 +59,13 @@ if(currentPowerUp == PowerUpType.Smash && Input.GetKeyDown(KeyCode.Space) && !sm
            }
            powerupCountdown = StartCoroutine(PowerupCountdownRoutine());
         }
-        IEnumerator PowerupCountdownRoutine(){
-            yield return new WaitForSeconds(7);
-            hasPowerup = false;
-            currentPowerUp = PowerUpType.None;
-            powerupIndicator.gameObject.SetActive(false);
-        }
+    
+    }
+    IEnumerator PowerupCountdownRoutine(){
+        yield return new WaitForSeconds(7);
+        hasPowerup = false;
+        currentPowerUp = PowerUpType.None;
+        powerupIndicator.gameObject.SetActive(false);
     }
     private void OnCollisionEnter(Collision collision)
     {

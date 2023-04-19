@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class RocketBehaviour : MonoBehaviour
 {
-   //public GameObject target;
-    //public float speed = 10.0f;
-   // public float speedRot = 10.0f;
+
+
+    public float speedRot = 10.0f;
     private Transform target;
     private float speed = 15.0f;
     private bool homing = true;
@@ -22,8 +22,10 @@ public class RocketBehaviour : MonoBehaviour
     void Update()
     {
         /*
-         if (!target) { Destroy(gameObject);}
-; 
+         if (!target)
+         { 
+            Destroy(gameObject);
+         }
           Vector3 lookDirection = target.transform.position - transform.position;
 
         Quaternion rotateTarget = Quaternion.LookRotation(lookDirection, Vector3.up) * Quaternion.Euler(90.0f, 0, 0);
@@ -33,12 +35,15 @@ public class RocketBehaviour : MonoBehaviour
 
 
         transform.Translate(Vector3.up * Time.deltaTime * speed);
-        */
+    */
 
-
-        Vector3 moveDirection = (target.transform.position - transform.position).normalized;
-        transform.position += moveDirection * speed * Time.deltaTime;
-        transform.LookAt(target);
+        if(homing && target != null)
+        {
+            Vector3 moveDirection = (target.transform.position - transform.position).normalized;
+            transform.position += moveDirection * speed * Time.deltaTime;
+            transform.LookAt(target);
+        }
+ 
 
     }
     public void Fire(Transform newTarget)
@@ -53,13 +58,15 @@ public class RocketBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        if (collision.gameObject.CompareTag("Enemy"))
+        if(target != null)
         {
-           Rigidbody targetRigidbody = collision.gameObject.GetComponent<Rigidbody>();
-           Vector3 away = -collision.contacts[0].normal;
-           targetRigidbody.AddForce(away * rocketStrength, ForceMode.Impulse);
-           Destroy(gameObject);
+            if (collision.gameObject.CompareTag(target.tag))
+            {
+            Rigidbody targetRigidbody = collision.gameObject.GetComponent<Rigidbody>();
+            Vector3 away = -collision.contacts[0].normal;
+            targetRigidbody.AddForce(away * rocketStrength, ForceMode.Impulse);
+            Destroy(gameObject);
+            }
         }
     }
 }
