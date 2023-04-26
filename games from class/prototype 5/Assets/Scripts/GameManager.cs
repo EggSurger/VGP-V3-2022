@@ -36,16 +36,18 @@ public class GameManager : MonoBehaviour
         }
     }
     IEnumerator SpawnTarget()
-    {while (isGameActive){
-        yield return new WaitForSeconds(spawnRate);
-        int index = Random.Range(0, targets.Count);
-        Instantiate(targets[index]);
-        
-    }}
-    public void UpdateScore(int scoreToAdd){
-        scoreText.text = "Score:" + score;
+    {
+        while (isGameActive)
+       {
+            yield return new WaitForSeconds(spawnRate);
+            int index = Random.Range(0, targets.Count);
+            Instantiate(targets[index]);
+       }
+    }
+    public void UpdateScore(int scoreToAdd)
+    {
         score += scoreToAdd;
-
+        scoreText.text = "Score: " + score;
     }
     public void UpdateLives(int livesToChange)
     {
@@ -63,11 +65,13 @@ public class GameManager : MonoBehaviour
         restartButton.gameObject.SetActive(true);
 
     }
-    public void RestartGame(){
+    public void RestartGame()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    public void StartGame(int difficulty){
-          isGameActive = true;
+     public void StartGame(int difficulty)
+     {
+        isGameActive = true;
         StartCoroutine(SpawnTarget());
         score = 0;
         spawnRate /= difficulty;
@@ -75,19 +79,20 @@ public class GameManager : MonoBehaviour
         titleScreen.gameObject.SetActive(false);
         UpdateLives(5);
     }
-void ChangedPaused(){
-    if(!paused)
+    void ChangedPaused()
     {
-        paused = true;
-        pauseScreen.SetActive(true);
-        Time.timeScale = 0;
+        if(!paused)
+        {
+            paused = true;
+            pauseScreen.SetActive(true);
+            Time.timeScale = 0;
 
+        }
+        else
+        {
+            paused = false;
+            pauseScreen.SetActive(false);
+            Time.timeScale = 1;
+        }
     }
-    else
-    {
-        paused = false;
-        pauseScreen.SetActive(false);
-        Time.timeScale = 1;
-    }
-}
 }
